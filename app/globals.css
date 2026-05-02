@@ -1,0 +1,263 @@
+/* stylelint-disable at-rule-no-unknown */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --forest: #2D4A2D;
+  --forest-light: #3D5E3A;
+  --forest-dark: #1E3320;
+  --olive: #5C7A3E;
+  --olive-light: #7A9B55;
+  --cream: #E8D5B0;
+  --cream-light: #F5ECD7;
+  --cream-dark: #D4BC8E;
+  --amber: #C8842A;
+  --amber-light: #DCA04A;
+  --white: #ffffff;
+
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream-light);
+  color: var(--forest-dark);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* Diagonal background texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 80px,
+      rgba(45, 74, 45, 0.015) 80px,
+      rgba(45, 74, 45, 0.015) 81px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream-light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--olive);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--forest);
+}
+
+/* Selection */
+::selection {
+  background: var(--amber);
+  color: var(--cream-light);
+}
+
+/* Typography utilities */
+.font-display {
+  font-family: var(--font-display);
+}
+.font-body {
+  font-family: var(--font-body);
+}
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Diagonal clip utility */
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.clip-diagonal-reverse {
+  clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 100%);
+}
+
+/* Grain overlay */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Animated underline */
+.underline-animate {
+  position: relative;
+}
+.underline-animate::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--amber);
+  transition: width 0.3s ease;
+}
+.underline-animate:hover::after {
+  width: 100%;
+}
+
+/* Section reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Nav link active state */
+.nav-link-active {
+  color: var(--amber);
+}
+
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--forest);
+    color: var(--cream-light);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: var(--amber-light);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  .btn-primary:hover::before {
+    transform: translateX(0);
+  }
+  .btn-primary span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease; 
+    color: var(--cream-light);
+  }
+  .btn-primary:hover span {
+    color: var(--forest); 
+  }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--amber-light);
+    color: var(--forest-dark);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-secondary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: var(--forest);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  .btn-secondary:hover::before {
+    transform: translateX(0);
+    color: var(--forest);
+  }
+  .btn-secondary span {
+    position: relative;
+    z-index: 2;
+    color: var(--forest-dark);
+    transition: color 0.3s ease;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--forest);
+    color: var(--forest-);
+    transition: all 0.3s ease;
+  }
+  .btn-secondary:hover span {
+    color: var(--cream-light); 
+  }
+  .btn-outline:hover {
+    background: var(--forest);
+    color: var(--cream-light);
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-family: var(--font-mono);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+
+  .span-card {
+    border: #1E3320;
+    border: border
+  }
+
+  .card-forest {
+    background: var(--forest);
+    color: var(--cream-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-forest:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(45,74,45,0.3);
+  }
+}
