@@ -23,7 +23,7 @@ export default function LeadershipPage() {
             <div className="h-44 mb-4" style={{ background: 'var(--cream)' }} />
             <p className="text-sm mb-2" style={{ color: 'var(--forest)' }}>Role 2: Volunteer Mentor | 3i-STEM Initiative & Chevening Alumni Nigeria</p>
             <p className="text-sm mb-2" style={{ color: 'var(--forest)' }}>Served as a Brand Designer and Content Contributor for the Chevening Science Competition, developing the visual identity and STEM curriculum content.</p>
-            <p className="text-sm" style={{ color: 'var(--forest)', opacity: 0.75 }}>Provided technical mentorship to junior secondary students in web development and cybersecurity, fostering a community of young digital enthusiast</p>
+            <p className="text-sm" style={{ color: 'var(--forest)', opacity: 0.75 }}>Provided technical mentorship to junior secondary students in web development and cybersecurity, fostering a community of young digital enthusiasts</p>
           </article>
         </div>
       </div>
