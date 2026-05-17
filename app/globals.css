@@ -226,7 +226,7 @@ body::before {
     border-width: 1px;
     border-style: solid;
     border-color: var(--forest);
-    color: var(--forest-);
+    color: var(--forest);
     transition: all 0.3s ease;
   }
   .btn-secondary:hover span {
@@ -247,8 +247,7 @@ body::before {
   }
 
   .span-card {
-    border: #1E3320;
-    border: border
+    border: 1px solid #1E3320;
   }
 
   .card-forest {
