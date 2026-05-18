@@ -77,7 +77,7 @@ npm start
 git init
 git add .
 git commit -m "Initial commit — academic portfolio"
-git remote add origin https://github.com/YOUR_USERNAME/einstein-portfolio.git
+git remote add origin https://github.com/YOUR_USERNAME/somto-portfolio.git
 git push -u origin main
 ```
 
