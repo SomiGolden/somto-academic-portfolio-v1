@@ -107,7 +107,7 @@ export default function HistoryPage() {
                 style={{ color: "var(--forest)" }}
               >
                 Educational Data and Assessment Officer | Delight Secondary
-                School, Ogidi, Anambra State, Nigeria | Sep 2021 – Jul 2021
+                School, Ogidi, Anambra State, Nigeria | Sep 2021 – Jul 2022
               </h2>
               <p className="section-label mb-3">DATA & COMPLIANCE</p>
               <p className="text-sm mb-2" style={{ color: "var(--forest)" }}>

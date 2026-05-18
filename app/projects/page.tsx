@@ -2,7 +2,7 @@ import SectionReveal from "@/components/SectionReveal";
 
 export default function ProjectsPage() {
   return (
-    <section className="pt-32 pb-24" style={{ background: 'var(--cream-light)' }}>
+    <section className="relative pt-32 pb-24" style={{ background: 'var(--cream-light)' }}>
               {/* Grid pattern overlay */}
               <div
           className="absolute inset-0 pointer-events-none"
@@ -32,7 +32,7 @@ export default function ProjectsPage() {
             <p className="section-label  mb-2">NYSC INDUSTRY EVIDENCE</p>
             <h2 className="font-display text-xl mb-3" style={{ color: 'var(--forest)' }}>Public Sector Infrastructure</h2>
             <div className="h-44 mb-4" style={{ background: 'var(--cream)' }} />
-            <p className=" mb-2" style={{ color: 'var(--forest)' }}>Accessible and secure interface design for large-scale national systems (Vehicle Registration & Health Data Management).</p>
+            <p className="text-sm mb-2" style={{ color: 'var(--forest)' }}>Accessible and secure interface design for large-scale national systems (Vehicle Registration & Health Data Management).</p>
             <p className="text-sm" style={{ color: 'var(--forest)', opacity: 0.75 }}>Visuals are representative; actual project screens are protected by Non-Disclosure Agreements (NDA) due to national security protocols.</p>
           </article>
 
@@ -42,11 +42,11 @@ export default function ProjectsPage() {
             <img src="/cbt-school.jpg" alt="CBT & Digital Reporting" className="w-full h-[400px] object-cover rounded-lg" />
             <ul className="space-y-1">
               <li className="flex items-start gap-2">
-                  <p className="p-1 mt-2 bg-amber-portfolio"></p>
+                  <p className="p-1 mt-2 rounded-sm" style={{ background: 'var(--amber)' }}></p>
                   <p>Pioneered the implementation of Computer-Based Testing (CBT) and the digitisation of end-of-term results at City Comprehensive Secondary School, Ogidi, Anambra State, Nigeria.</p>
               </li> 
               <li className="flex items-start gap-2">
-                  <p className="p-1 mt-2 bg-amber-portfolio"></p>
+                  <p className="p-1 mt-2 rounded-sm" style={{ background: 'var(--amber)' }}></p>
             <p>Streamlined academic reporting for staff and increased data accessibility for over 200+ parents and stakeholders.</p>
               </li> 
             </ul>
